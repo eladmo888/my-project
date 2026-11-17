@@ -17,9 +17,9 @@ what to change, and repeat. My goal is an AI agent that runs this loop: given re
 the simulation results and improves the design until the requirements are met,
 or explains why they cannot be.
 
-What improves: the lift-to-drag ratio (L/D) at cruise, including estimated profile drag. The agent itself is judged on how often it meets all requirements across a set of test cases, how many simulation runs it needs, and how it compares with a baseline search program given the same run budget.
+What improves: the lift-to-drag ratio (L/D) at cruise, including an estimate of profile drag, the lift produced divided by the air resistance. A higher value means less energy is needed to stay airborne. The agent is judged on how often it meets all requirements across several test cases, how many simulation runs it needs, and how it compares with a baseline search program given the same run budget.
 
-Limits: 5 kg payload, total mass of [your assumption] kg, wingspan up to 2.5 m, cruise at 60 m/s at sea level, a minimum wing chord of [value] cm to prevent a degenerate wing, trimmed flight, and a static margin of [range].
+Limits (initial values, to be confirmed): 10 kg total mass including a 5 kg payload, wingspan up to 2.5 m, cruise at 60 m/s at sea level, mean wing chord of at least 0.12 m, and a static margin between 5% and 15% of mean chord. The aircraft must be trimmed (forces and turning moments balanced for steady flight) and stable (it returns to its attitude after a disturbance).
 
 Traceability: 
 every reported number comes from a logged simulation run.
