@@ -17,14 +17,9 @@ what to change, and repeat. My goal is an AI agent that runs this loop: given re
 the simulation results and improves the design until the requirements are met,
 or explains why they cannot be.
 
-What improves:
-the lift-to-drag ratio (L/D), the lift produced divided by
-the air resistance. A higher value means less energy is needed to stay
-airborne.
+What improves: the lift-to-drag ratio (L/D) at cruise, including estimated profile drag. The agent itself is judged on how often it meets all requirements across a set of test cases, how many simulation runs it needs, and how it compares with a baseline search program given the same run budget.
 
-Limits:
-5 kg payload, wingspan up to 2.5 m, cruise at 60 m/s. The aircraft must be trimmed (forces and turning moments balanced for steady flight) and stable (it returns to its attitude
-after a disturbance), with a safe static margin, the measure of stability.
+Limits: 5 kg payload, total mass of [your assumption] kg, wingspan up to 2.5 m, cruise at 60 m/s at sea level, a minimum wing chord of [value] cm to prevent a degenerate wing, trimmed flight, and a static margin of [range].
 
 Traceability: 
 every reported number comes from a logged simulation run.
@@ -81,6 +76,8 @@ What the language model adds:
 a simple search program can tune numbers, and
 I will build one as a baseline. The agent should add value in choosing between
 very different layouts, diagnosing failed runs, and balancing conflicting requirements.
+
+Open question: for which requirement sets does the agent do better than the baseline, and how many repeated runs are needed to show that reliably?
 
 ## Explain your project to someone outside your field
 
